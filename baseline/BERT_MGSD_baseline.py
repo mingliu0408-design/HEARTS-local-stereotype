@@ -1,5 +1,5 @@
 # BERT_MGSD_baseline.py
-# 精简版：只在 MGSD 上训练 + 评估一个 BERT 模型
+# Minimal version: train + evaluate a single BERT model on MGSD only
 
 import os
 import logging
@@ -23,7 +23,7 @@ from codecarbon import EmissionsTracker
 
 
 # -----------------------------
-# 1. 数据加载辅助函数
+# 1. Data loading helper function
 # -----------------------------
 def data_loader(csv_file_path, labelling_criteria, dataset_name, sample_size, num_examples):
     combined_data = pd.read_csv(csv_file_path, usecols=["text", "label", "group"])
@@ -65,7 +65,7 @@ def data_loader(csv_file_path, labelling_criteria, dataset_name, sample_size, nu
 
 
 # -----------------------------
-# 2. 训练函数
+# 2. Training function
 # -----------------------------
 os.environ["HUGGINGFACE_TRAINER_ENABLE_PROGRESS_BAR"] = "1"
 logging.basicConfig(level=logging.INFO)
@@ -143,7 +143,7 @@ def train_model(
 
     training_args = TrainingArguments(
         output_dir=model_output_dir,
-        num_train_epochs=3,  # 可以先跑 3 个 epoch，比原来的 6 更快
+        num_train_epochs=3,  # You can start with 3 epochs; faster than 6
         evaluation_strategy="epoch",
         learning_rate=learning_rate,
         per_device_train_batch_size=batch_size,
@@ -173,7 +173,7 @@ def train_model(
 
 
 # -----------------------------
-# 3. 评估函数
+# 3. Evaluation function
 # -----------------------------
 def evaluate_model(test_data, model_output_dir, result_output_base_dir, dataset_name, seed):
 
@@ -241,10 +241,10 @@ def evaluate_model(test_data, model_output_dir, result_output_base_dir, dataset_
 
 
 # -----------------------------
-# 4. 主流程：只跑 MGSD + BERT
+# 4. Main flow: MGSD + BERT only
 # -----------------------------
 if __name__ == "__main__":
-    # 4.1 加载 MGSD 数据
+    # 4.1 Load MGSD data
     train_data_mgsd, test_data_mgsd = data_loader(
         csv_file_path="MGSD.csv",
         labelling_criteria="stereotype",
@@ -253,19 +253,19 @@ if __name__ == "__main__":
         num_examples=5,
     )
 
-    # 4.2 在 MGSD 上训练一个 BERT 模型
+    # 4.2 Train a BERT model on MGSD
     model_output_dir = train_model(
         train_data=train_data_mgsd,
         model_path="google-bert/bert-base-uncased",
-        batch_size=16,          # 比 64 小，CPU 上跑更稳一点
-        epoch=3,                # 这里虽没用到（我们在 TrainingArguments 里写死了 3），但保留参数不影响
+        batch_size=16,          # Smaller than 64; more stable on CPU
+        epoch=3,                # Not used (epochs hard-coded in TrainingArguments), kept as a parameter anyway
         learning_rate=2e-5,
         model_output_base_dir="model_output_bert",
         dataset_name="mgsd_trained",
         seed=42,
     )
 
-    # 4.3 只在 MGSD 的测试集上做评估
+    # 4.3 Evaluate only on the MGSD test set
     evaluate_model(
         test_data=test_data_mgsd,
         model_output_dir=model_output_dir,
