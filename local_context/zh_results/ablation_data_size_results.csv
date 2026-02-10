@@ -1,0 +1,16 @@
+train_size,seed,epochs,lr,accuracy,macro_f1,report_file
+500,42,3,2e-05,0.8173333333333334,0.8173252144539758,local_context/zh_results/zh_classification_report_ablate_size500_seed42_e3_lr2e-05.csv
+500,43,3,2e-05,0.816,0.8157786068234891,local_context/zh_results/zh_classification_report_ablate_size500_seed43_e3_lr2e-05.csv
+500,44,3,2e-05,0.7786666666666666,0.7782108653517272,local_context/zh_results/zh_classification_report_ablate_size500_seed44_e3_lr2e-05.csv
+1000,42,3,2e-05,0.828,0.8279752284328943,local_context/zh_results/zh_classification_report_ablate_size1000_seed42_e3_lr2e-05.csv
+1000,43,3,2e-05,0.8186666666666667,0.8179819552306989,local_context/zh_results/zh_classification_report_ablate_size1000_seed43_e3_lr2e-05.csv
+1000,44,3,2e-05,0.82,0.8199279711884754,local_context/zh_results/zh_classification_report_ablate_size1000_seed44_e3_lr2e-05.csv
+2000,42,3,2e-05,0.8306666666666667,0.8298800319343309,local_context/zh_results/zh_classification_report_ablate_size2000_seed42_e3_lr2e-05.csv
+2000,43,3,2e-05,0.812,0.8106640455050839,local_context/zh_results/zh_classification_report_ablate_size2000_seed43_e3_lr2e-05.csv
+2000,44,3,2e-05,0.8293333333333334,0.8285714285714285,local_context/zh_results/zh_classification_report_ablate_size2000_seed44_e3_lr2e-05.csv
+3000,42,3,2e-05,0.8466666666666667,0.8460093662013323,local_context/zh_results/zh_classification_report_ablate_size3000_seed42_e3_lr2e-05.csv
+3000,43,3,2e-05,0.8466666666666667,0.8466445834866887,local_context/zh_results/zh_classification_report_ablate_size3000_seed43_e3_lr2e-05.csv
+3000,44,3,2e-05,0.7986666666666666,0.7959205739091888,local_context/zh_results/zh_classification_report_ablate_size3000_seed44_e3_lr2e-05.csv
+3500,42,3,2e-05,0.832,0.831567615353904,local_context/zh_results/zh_classification_report_ablate_size3500_seed42_e3_lr2e-05.csv
+3500,43,3,2e-05,0.8146666666666667,0.8111040042327199,local_context/zh_results/zh_classification_report_ablate_size3500_seed43_e3_lr2e-05.csv
+3500,44,3,2e-05,0.8466666666666667,0.8466445834866887,local_context/zh_results/zh_classification_report_ablate_size3500_seed44_e3_lr2e-05.csv

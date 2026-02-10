@@ -1,0 +1,4 @@
+Estimated emissions for train_zh_bert.py run:
+run_name = ablate_size3500_seed42_e3_lr2e-05
+epochs = 3, lr = 2e-05
+emissions = nan kg CO2

@@ -1,0 +1,4 @@
+Estimated emissions for train_zh_bert.py run:
+run_name = e3_lr2e-5
+epochs = 3, lr = 2e-05
+emissions = N/A kg CO2

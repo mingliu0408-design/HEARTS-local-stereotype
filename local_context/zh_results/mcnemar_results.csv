@@ -1,0 +1,5 @@
+model_a_name,model_b_name,model_a_path,model_b_path,n_a_wrong_b_correct,n_a_correct_b_wrong,statistic,p_value,significant_p_lt_0_05
+TFIDF,BERT,local_context/zh_results/baseline_tfidf_lr_full_results.csv,local_context/zh_results/zh_full_results_e3_lr2e-5.csv,266,62,125.63719512195122,0.0,True
+BERT,MacBERT,local_context/zh_results/zh_full_results_e3_lr2e-5.csv,local_context/zh_results/zh_full_results_macbert_e3_lr2e-5.csv,31,26,0.2807017543859649,0.5962416305866569,False
+TFIDF,BERT,local_context/zh_results/baseline_tfidf_lr_full_results.csv,local_context/zh_results/zh_full_results_e3_lr2e-5.csv,266,62,125.63719512195122,0.0,True
+BERT,MacBERT,local_context/zh_results/zh_full_results_e3_lr2e-5.csv,local_context/zh_results/zh_full_results_macbert_e3_lr2e-5.csv,31,26,0.2807017543859649,0.5962416305866569,False
